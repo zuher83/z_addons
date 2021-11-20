@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="assets_backend" name="Backend Assets" inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/z_hide_zero_number_list/static/src/scss/list.scss"/>
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/z_hide_zero_number_list/static/src/js/list.js"/>
+        </xpath>
+    </template>
+    </odoo>
