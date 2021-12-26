@@ -1,4 +1,4 @@
-odoo.define('z_backend_theme.List', function (require) {
+odoo.define('z_hide_zero_number_list.List', function (require) {
     "use strict";
 
     var core = require('web.core');
@@ -11,7 +11,6 @@ odoo.define('z_backend_theme.List', function (require) {
             if (node.tag === 'field') {
                 var typeClass = this.state.fields[node.attrs.name].type;
                 if (typeClass === 'monetary' || typeClass === 'float') {
-                    var curField = this.state.fields[node.attrs.name];
                     var curFieldVal = record.data[node.attrs.name];
 
                     if ((!curFieldVal > 0) || (!curFieldVal < 0)) {
