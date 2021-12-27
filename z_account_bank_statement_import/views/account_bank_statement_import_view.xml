@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+
+        <record id="account_bank_statement_import_view_inherit" model="ir.ui.view">
+            <field name="name">Import Bank Statements</field>
+            <field name="model">account.statement.import</field>
+            <field name="inherit_id" ref="account_statement_import.account_statement_import_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='statement_file']" position="before">
+                    <group>
+                        <field name="statement_id" domain="[('journal_id','=',context.get('journal_id'))]"/>
+                    </group>
+                </xpath>
+
+
+            </field>
+        </record>
+
+</odoo>
