@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* z_account_bank_statement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-26 20:41+0000\n"
+"PO-Revision-Date: 2021-12-26 20:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: z_account_bank_statement
+#: model:ir.model,name:z_account_bank_statement.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Relevé bancaire"
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement__credit_balance
+msgid "Computed Credit"
+msgstr "Total Crédit"
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement__debit_balance
+msgid "Computed Debit"
+msgstr "Total Débit"
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement__date_start
+msgid "Date Start"
+msgstr "Date Début"
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement__id
+msgid "ID"
+msgstr ""
+
+#. module: z_account_bank_statement
+#: model:ir.model.fields,field_description:z_account_bank_statement.field_account_bank_statement____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: z_account_bank_statement
+#: model_terms:ir.ui.view,arch_db:z_account_bank_statement.view_bank_statement_tree_deb_credit
+msgid "Total"
+msgstr "Total"

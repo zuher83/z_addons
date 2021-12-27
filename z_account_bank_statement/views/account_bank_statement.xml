@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bank_statement_form_z_inherit" model="ir.ui.view">
+            <field name="name">view.bank.statement.z.inherit.form</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form" />
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//group[@name='sale_total']" position="replace">
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                            <div class="oe_subtotal_footer_separator oe_inline">
+                                <label for="balance_end" />
+                            </div>
+                            <field name="balance_end" nolabel="1" class="oe_subtotal_footer_separator" />
+                            <div class="oe_subtotal_footer_separator oe_inline">
+                                <label for="debit_balance" />
+                            </div>
+                            <field name="debit_balance" nolabel="1" readonly="1" class="text-danger oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency'}" />
+                            <div class="oe_subtotal_footer_separator oe_inline">
+                                <label for="credit_balance" />
+                            </div>
+                            <field name="credit_balance" nolabel="1" readonly="1" widget='monetary' class="text-success oe_subtotal_footer_separator" options="{'currency_field': 'currency'}" />
+                        </group>
+                    </xpath>
+                    <xpath expr="//field[@name='date']" position="before">
+                        <field name="date_start" required="1" />
+                    </xpath>
+
+
+                    <xpath expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree" position="attributes">
+                        <attribute name="decoration-muted">is_reconciled == True</attribute>
+                        <attribute name="decoration-danger">amount &lt; 0.00 and is_reconciled != True</attribute>
+                        <attribute name="decoration-success">amount &gt; 0.00 and is_reconciled != True</attribute>
+                        <attribute name="decoration-bf">is_reconciled != True</attribute>
+                        <attribute name="default_order">date desc, sequence</attribute>
+                        <attribute name="limit">500</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_bank_statement_tree_deb_credit" model="ir.ui.view">
+            <field name="name">view.bank.statement.tree.deb.credit</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_tree" />
+            <field name="arch" type="xml">
+                <data>
+                    <field name="state" position="before">
+                        <field name="debit_balance" readonly="1" sum="Total" />
+                        <field name="credit_balance" readonly="1" sum="Total" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>
